@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
     View,
@@ -7,15 +8,38 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-const Home = ({ navigation }) => (
-    <View style={styles.container}>
+import { fetchOrganizations } from '../redux/modules/organizations';
+
+class Home extends React.Component {
+  componentWillMount() {
+    const { dispatch } = this.props;
+
+    dispatch(fetchOrganizations());
+  }
+  render () {
+    const { navigation } = this.props;
+    console.log(this.props.organizations);
+    return (
+      <View style={styles.container}>
+        {this.props.loading && <View><Text>Loading</Text></View>}
+        <View>
+          {
+            this.props.organizations.map(org => (
+              <View key={org.name}>
+                <Text>{org.name}</Text>
+              </View>
+            ))
+          }
+        </View>
         <TouchableOpacity onPress={() => {
-            navigation.navigate('Page2');    
+          navigation.navigate('Page2');    
         }}>
-            <Text style={styles.text}>Go to page 2</Text>
+          <Text style={styles.text}>Go to page 2</Text>
         </TouchableOpacity>
-    </View>
-);
+      </View>
+    )
+  }
+}
 
 Home.navigationOptions = {
     title: 'Home'
@@ -34,4 +58,7 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Home;
+export default connect((state) => ({
+  loading: state.organizations.loading,
+  organizations: state.organizations.organizations
+}))(Home);
