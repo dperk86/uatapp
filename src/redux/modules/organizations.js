@@ -11,29 +11,29 @@ const ERROR_ORGANIZATIONS = 'ERROR_ORGANIZATIONS';
 const initialState = {
   loading: false,
   error: null,
-  organizations: []
+  organizations: [],
 };
 
 // Reducer
 
 export default function reducer(state = initialState, action = {}) {
-  switch(action.type) {
+  switch (action.type) {
     case START_ORGANIZATIONS:
       return {
         ...state,
-        loading: true
+        loading: true,
       };
-    case LOAD_ORGANIZATIONS: 
+    case LOAD_ORGANIZATIONS:
       return {
         ...state,
         loading: false,
-        organizations: action.data
+        organizations: action.data,
       };
-    case ERROR_ORGANIZATIONS: 
+    case ERROR_ORGANIZATIONS:
       return {
         ...state,
         loading: false,
-        error: action.data
+        error: action.data,
       };
     default:
       return state;
@@ -43,24 +43,25 @@ export default function reducer(state = initialState, action = {}) {
 // Actions
 
 const startOrgs = () => ({
-  type: START_ORGANIZATIONS
+  type: START_ORGANIZATIONS,
 });
 
 const loadOrgs = organizations => ({
   type: LOAD_ORGANIZATIONS,
-  data: organizations
+  data: organizations,
 });
 
 const errorOrgs = error => ({
   type: ERROR_ORGANIZATIONS,
-  data: error
+  data: error,
 });
 
-export const fetchOrganizations = () => (dispatch) => {
+export const fetchOrganizations = () => dispatch => {
   dispatch(startOrgs());
   setTimeout(() => {
-    axios.get('http://localhost:3001/organizations')
+    axios
+      .get('http://localhost:3001/organizations')
       .then(data => dispatch(loadOrgs(data.data)))
       .catch(err => dispatch(errorOrgs(error)));
   }, 1000);
-}
+};

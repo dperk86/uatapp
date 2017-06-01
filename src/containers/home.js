@@ -2,63 +2,143 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import {
-    View,
-    Text,
-    StyleSheet,
-    TouchableOpacity
+  View,
+  Text,
+  Image,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  TextInput,
 } from 'react-native';
 
 import { fetchOrganizations } from '../redux/modules/organizations';
 
+const Separator = () => <View style={styles.separator} />;
+
 class Home extends React.Component {
+  state = {
+    searchText: '',
+  };
   componentWillMount() {
     const { dispatch } = this.props;
-
     dispatch(fetchOrganizations());
   }
-  render () {
+  renderItem = ({ item }) => {
     const { navigation } = this.props;
-    console.log(this.props.organizations);
+    return (
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Page2');
+        }}
+      >
+        <View style={styles.listItem}>
+          <View><Text style={styles.text}>{item.name}</Text></View>
+          <View><Text>{item.description}</Text></View>
+        </View>
+      </TouchableOpacity>
+    );
+  };
+  keyExtractor(item) {
+    return item.name;
+  }
+  render() {
+    const { navigation, organizations } = this.props;
+    const { searchText } = this.state;
+
+    const filteredOrganizations = organizations.filter(org => {
+      if (searchText === '') return true;
+      if (org.name.toLowerCase().startsWith(searchText.toLowerCase()))
+        return true;
+    });
+
     return (
       <View style={styles.container}>
-        {this.props.loading && <View><Text>Loading</Text></View>}
-        <View>
-          {
-            this.props.organizations.map(org => (
-              <View key={org.name}>
-                <Text>{org.name}</Text>
+        {this.props.loading
+          ? <View><Text>Loading</Text></View>
+          : <View>
+              <View style={styles.searchContainer}>
+                <TextInput
+                  style={styles.searchInput}
+                  onChangeText={searchText => this.setState({ searchText })}
+                  value={this.state.text}
+                  placeholder="Search"
+                />
               </View>
-            ))
-          }
-        </View>
-        <TouchableOpacity onPress={() => {
-          navigation.navigate('Page2');    
-        }}>
-          <Text style={styles.text}>Go to page 2</Text>
-        </TouchableOpacity>
+              <Separator />
+              <FlatList
+                style={styles.flatList}
+                ItemSeparatorComponent={Separator}
+                data={filteredOrganizations}
+                keyExtractor={this.keyExtractor}
+                renderItem={this.renderItem}
+              />
+            </View>}
       </View>
-    )
+    );
   }
 }
 
 Home.navigationOptions = {
-    title: 'Home'
+  title: ' ',
+  headerStyle: {
+    backgroundColor: 'white',
+    paddingTop: 20,
+    height: 80,
+    shadowOpacity: 0,
+  },
+  headerLeft: (
+    <Image
+      style={{ height: 40, width: 40, marginLeft: 10 }}
+      source={require('../../assets/logo.png')}
+    />
+  ),
 };
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#ccc',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    text: {
-        color: '#222',
-        fontWeight: 'bold'
-    }
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  searchContainer: {
+    marginVertical: 20,
+    flex: 0,
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    paddingHorizontal: 10,
+  },
+  searchInput: {
+    fontSize: 18,
+    height: 40,
+    flex: 1,
+    borderColor: '#4eb5e2',
+    borderWidth: 1,
+    color: '#4eb5e2',
+    padding: 10,
+  },
+  flatList: {
+    flex: 1,
+  },
+  listItem: {
+    paddingVertical: 10,
+    flex: 1,
+    paddingHorizontal: 10,
+  },
+  separator: {
+    backgroundColor: '#555',
+    height: 1,
+    marginHorizontal: 10,
+  },
+  text: {
+    color: '#222',
+    fontWeight: 'bold',
+    fontSize: 18,
+  },
 });
 
-export default connect((state) => ({
+export default connect(state => ({
   loading: state.organizations.loading,
-  organizations: state.organizations.organizations
+  organizations: state.organizations.organizations,
 }))(Home);
