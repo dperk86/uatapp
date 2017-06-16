@@ -28,7 +28,7 @@ class Home extends React.Component {
     return (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Page2');
+          navigation.navigate('Page3');
         }}
       >
         <View style={styles.listItem}>
