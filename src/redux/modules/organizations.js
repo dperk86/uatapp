@@ -62,6 +62,6 @@ export const fetchOrganizations = () => dispatch => {
     axios
       .get('http://localhost:3001/organizations')
       .then(data => dispatch(loadOrgs(data.data)))
-      .catch(err => dispatch(errorOrgs(error)));
+      .catch(err => dispatch(errorOrgs(err)));
   }, 1000);
 };
