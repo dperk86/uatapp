@@ -12,12 +12,14 @@ import {
 } from 'react-native';
 
 import { fetchOrganizations } from '../redux/modules/organizations';
+import { fetchEvents } from '../redux/modules/events';
 
 const Separator = () => <View style={styles.separator} />;
 
 class Home extends React.Component {
   state = {
     searchText: '',
+    loadingId: null,
   };
   componentWillMount() {
     const { dispatch } = this.props;
@@ -28,11 +30,26 @@ class Home extends React.Component {
     return (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Page3');
+          this.setState({ loadingId: item.id });
+          this.props
+            .dispatch(fetchEvents(item.id))
+            .then(() => {
+              this.setState({ loadingId: null });
+              navigation.navigate('Events', { organization: item });
+            })
+            .catch(err => {
+              this.setState({ loadingId: null });
+              alert(err);
+            });
         }}
       >
         <View style={styles.listItem}>
-          <View><Text style={styles.text}>{item.name}</Text></View>
+          <View>
+            <Text style={styles.text}>
+              {item.name}
+              {item.id === this.state.loadingId && ' (Loading)'}
+            </Text>
+          </View>
           <View><Text>{item.description}</Text></View>
         </View>
       </TouchableOpacity>
@@ -141,4 +158,5 @@ const styles = StyleSheet.create({
 export default connect(state => ({
   loading: state.organizations.loading,
   organizations: state.organizations.organizations,
+  eventsLoading: state.events.loading,
 }))(Home);

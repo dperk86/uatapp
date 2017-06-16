@@ -1,44 +1,316 @@
 {
   "organizations": [
     {
+      "id": 1,
       "name": "Falcons",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 2,
       "name": "Ravens",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 3,
       "name": "Giants",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 4,
       "name": "Cowboys",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 5,
       "name": "Patriots",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 6,
       "name": "Jets",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 7,
       "name": "49ers",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 8,
       "name": "Rams",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 9,
       "name": "Eagles",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
     },
     {
+      "id": 10,
       "name": "Redskins",
       "description": "This is a long ass description intended to make the app tile rows larger nomsayin"
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "events": [
+        {
+          "id": 1,
+          "name": "2016 ALL CCINFC",
+          "location": "Tampa, FL",
+          "date": "2017-05-01T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 2,
+          "name": "UAT ASSESSMENT",
+          "location": "Orlando, FL",
+          "date": "2017-06-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        },
+        {
+          "id": 3,
+          "name": "Tampa Bay Storm Tryout",
+          "location": "Tampa, FL",
+          "date": "2017-07-16T04:00:00.000Z",
+          "image": "event-logo.png"
+        }
+      ]
     }
   ]
 }
