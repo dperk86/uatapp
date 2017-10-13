@@ -27,10 +27,11 @@ class Events extends React.Component {
       : date === today ? '#ffa200' : '#0f407b';
 
     const { navigation } = this.props;
+		const { organization } = navigation.state.params;
     return (
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Page2');
+          navigation.navigate('EventsMain', { organization, item });
         }}
       >
         <View style={styles.listItem}>

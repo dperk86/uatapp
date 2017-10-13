@@ -60,7 +60,61 @@
           "name": "2016 ALL CCINFC",
           "location": "Tampa, FL",
           "date": "2017-05-01T04:00:00.000Z",
-          "image": "event-logo.png"
+          "image": "event-logo.png",
+					"test": [
+						{
+							"id": 1,
+							"testname": "Overall Score"
+						},
+						{
+							"id": 2,
+							"testname": "40 Yard Dash"
+						},
+						{
+							"id": 3,
+							"testname": "Vertical Jump"
+						},
+						{
+							"id": 4,
+							"testname": "Bench Press"
+						},
+						{
+							"id": 5,
+							"testname": "Shuttle Run"
+						}
+					],
+					"athletes": [
+						{
+							"id": 1,
+							"athletename": "Tim Jones",
+							"athleteid": "10"
+						},
+						{
+							"id": 2,
+							"athletename": "Matt Jackson",
+							"athleteid": "20"
+						},
+						{
+							"id": 3,
+							"athletename": "Mike Jones",
+							"athleteid": "30"
+						},
+						{
+							"id": 4,
+							"athletename": "James Wei",
+							"athleteid": "40"
+						},
+						{
+							"id": 5,
+							"athletename": "Earl Parker",
+							"athleteid": "50"
+						},
+						{
+							"id": 6,
+							"athletename": "Mary Striver",
+							"athleteid": "60"
+						}
+					]
         },
         {
           "id": 2,
@@ -83,7 +137,7 @@
       "events": [
         {
           "id": 1,
-          "name": "2016 ALL CCINFC",
+          "name": "2018 ALL CCINFC",
           "location": "Tampa, FL",
           "date": "2017-05-01T04:00:00.000Z",
           "image": "event-logo.png"
